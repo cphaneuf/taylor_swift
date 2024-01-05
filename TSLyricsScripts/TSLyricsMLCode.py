@@ -533,7 +533,7 @@ another pop album, but it does not. Expectedly though, the sister indie albums F
 and Evermore share among the greatest cosine similarities, at .615233.
 '''
 
-# examine how albums are associated with each other using multidimensional scaling
+# examine how albums are associated with each other using multidimensional scaling (mds)
 mds = MDS(n_components = 2, random_state = rand, normalized_stress = 'auto')
 mds_fit = mds.fit_transform(cos_sims_df_renamed)
 short_album_labels = ['TS', 'Fear', 'SN', 'Red', '1989', 'Rep', 'Love', 'Folk', 'Ever', 'Mid']
@@ -547,12 +547,11 @@ plt.savefig('MDS.png')
 plt.clf()
 
 '''
-Multidimensional scaling corroborates the conclusions above: 1989, positioned far
-to the right along Coordinate 1, is quite different from the other albums, especially
-(e.g.) Evermore, Speak Now (Taylor's Version), and Folklore. Multidimensional scaling
-also reveals Taylor Swift to be quite differnt from the other albums as it is positioned
-far to the top along Coordinate 2. The latter observation is less surprising, as Taylor
-Swift was the first album recorded.
+MDS corroborates the conclusions above: 1989, positioned far to the right along Coordinate 1, 
+is quite different from the other albums, especially (e.g.) Evermore, Speak Now (Taylor's Version), 
+and Folklore. MDS also reveals Taylor Swift to be quite different from the other albums 
+as it is positioned far to the top along Coordinate 2. The latter observation is more 
+predictable, as Taylor Swift was the first album recorded.
 '''
 
 # ------------------------------ topic modeling -------------------------------
